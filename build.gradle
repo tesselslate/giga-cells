@@ -3,6 +3,29 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+
+    id 'com.diffplug.spotless' version '7.0.3'
+}
+
+spotless {
+    format 'misc', {
+        target '*.gradle', 'src/main/resources/*.json', '.gitattributes', '.gitignore'
+
+        trimTrailingWhitespace()
+        indentWithSpaces(4)
+        endWithNewline()
+    }
+
+    java {
+        palantirJavaFormat()
+
+        importOrder('com.tesselslate', 'net', 'java|javax', 'org')
+        removeUnusedImports()
+
+        trimTrailingWhitespace()
+        indentWithSpaces(4)
+        endWithNewline()
+    }
 }
 
 version = mod_version
