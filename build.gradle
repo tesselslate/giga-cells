@@ -12,7 +12,7 @@ spotless {
         target '*.gradle', 'src/main/resources/*.json', '.gitattributes', '.gitignore'
 
         trimTrailingWhitespace()
-        indentWithSpaces(4)
+        leadingTabsToSpaces(4)
         endWithNewline()
     }
 
@@ -23,7 +23,7 @@ spotless {
         removeUnusedImports()
 
         trimTrailingWhitespace()
-        indentWithSpaces(4)
+        leadingTabsToSpaces(4)
         endWithNewline()
     }
 }
